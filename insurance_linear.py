@@ -31,6 +31,7 @@ We will create a model with the following steps:
 # MacOS
 # !pip install numpy matplotlib pandas torch torchvision torchaudio
 
+# Import all the necessary libraries 
 import torch
 import torchvision
 import torch.nn as nn
@@ -39,6 +40,17 @@ import matplotlib.pyplot as plt
 import torch.nn.functional as F
 from torchvision.datasets.utils import download_url
 from torch.utils.data import DataLoader, TensorDataset, random_split
+
+# Commented out IPython magic to ensure Python compatibility.
+import matplotlib.pyplot as plt
+# %matplotlib inline
+import seaborn as sns
+import matplotlib
+import plotly.graph_objs as go
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
 
 """## Step 1: Download and explore the data
 
@@ -83,18 +95,9 @@ categorical_cols = [x for x in dataframe.columns if type(dataframe[x][1])==str]
 # output/target variable(s)
 output_cols = [dataframe["charges"].name]
 
-"""**Q: Get the minimum, maximum and average value of the `charges` column and display it on a graph.**"""
+"""**Get the minimum, maximum and average value of the `charges` column and display it on a graph.**"""
 
-# Commented out IPython magic to ensure Python compatibility.
-import matplotlib.pyplot as plt
-# %matplotlib inline
-import seaborn as sns
-import matplotlib
-import plotly.graph_objs as go
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-import plotly.express as px
-import plotly.graph_objects as go
-import numpy as np
+
 
 #We sore the dataframe using the values in the charges column and store it in a different variable 
 data = dataframe.sort_values('charges')
