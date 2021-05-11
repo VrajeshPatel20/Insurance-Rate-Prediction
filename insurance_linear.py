@@ -157,9 +157,9 @@ train_size = num_rows - val_size
 
 train_ds, val_ds = torch.utils.data.random_split(dataset,[train_size,val_size]) # Use the random_split function to split dataset into 2 parts of the desired length
 
+# Fix a batch size to distribute data
 batch_size = 128
 
-from torch.utils.data import DataLoader
 
 train_loader = DataLoader(train_ds, batch_size, shuffle=True)
 val_loader = DataLoader(val_ds, batch_size)
