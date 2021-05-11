@@ -289,13 +289,10 @@ for x in lrs:
 for x in lrs:
   print(x)
 
-"""**Q: What is the final validation loss of your model?**"""
+"""**final validation loss of our model?**"""
 
 val_loss = 8066
 
-"""Let's log the final validation loss to Jovian and commit the notebook"""
-
-jovian.log_metrics(val_loss=val_loss)
 
 """## Step 5: Make predictions using the trained model
 
@@ -303,7 +300,7 @@ jovian.log_metrics(val_loss=val_loss)
 
 def predict_single(input, target, model):
     inputs = input.unsqueeze(0)
-    predictions = model(input)                # fill this
+    predictions = model(input)                
     prediction = predictions[0].detach()
     print("Input:", input)
     print("Target:", target)
